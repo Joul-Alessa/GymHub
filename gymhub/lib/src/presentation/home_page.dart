@@ -32,6 +32,15 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  Future<void> deleteExercise(int index) async {
+    final content = await fileService.readExercises();
+    final data = jsonDecode(content);
+
+    data["exercises"].removeAt(index);
+
+    await fileService.writeExercises(jsonEncode(data));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,13 +61,37 @@ class _HomePageState extends State<HomePage> {
                     await Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => AddExercisePage(
-                          exercise: exercise,
-                          index: index,
-                        ),
+                        builder: (_) => AddExercisePage(exercise: exercise, index: index),
                       ),
                     );
-                    await loadExercises(); // refrescar lista
+                    await loadExercises();
+                  }
+
+                  if (value == "delete") {
+                    final shouldDelete = await showDialog<bool>(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: Text("Eliminar ejercicio"),
+                          content: Text("¿Seguro que quieres eliminar este ejercicio?"),
+                          actions: [
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, false),
+                              child: Text("Cancelar"),
+                            ),
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, true),
+                              child: Text("Eliminar"),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+
+                    if (shouldDelete == true) {
+                      await deleteExercise(index);
+                      await loadExercises();
+                    }
                   }
                 },
                 itemBuilder: (context) => [
