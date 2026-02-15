@@ -47,8 +47,19 @@ class _HomePageState extends State<HomePage> {
             child: ListTile(
               title: Text(exercise["name"] ?? "Sin nombre"),
               trailing: PopupMenuButton<String>(
-                onSelected: (value) {
-                  // De momento no hace nada
+                onSelected: (value) async {
+                  if (value == "edit") {
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => AddExercisePage(
+                          exercise: exercise,
+                          index: index,
+                        ),
+                      ),
+                    );
+                    await loadExercises(); // refrescar lista
+                  }
                 },
                 itemBuilder: (context) => [
                   PopupMenuItem(
