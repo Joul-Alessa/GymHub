@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../data/local_file_service.dart';
+import 'add_exercise_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -49,10 +50,15 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => AddExercisePage()),
+          );
+        },
         child: Icon(Icons.add),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
