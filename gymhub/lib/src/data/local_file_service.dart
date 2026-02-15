@@ -21,7 +21,7 @@ class LocalFileService {
     return imagesDir;
   }
 
-  /// Verifica si existe el archivo. Si no, lo crea con contenido inicial.
+  /// Verifica si existe el archivo. Si no, lo crea con contenido inicial
   Future<void> ensureExercisesFileExists() async {
     final file = await _getLocalFile();
 
@@ -70,7 +70,7 @@ class LocalFileService {
     final newPath = '${imagesDir.path}/$filename';
     final newFile = await File(pickedFile.path).copy(newPath);
 
-    // Devolvemos la ruta relativa que guardaremos en el JSON
+    // Devolver la ruta relativa que se guarda en el JSON
     return 'images/$filename';
   }
 }

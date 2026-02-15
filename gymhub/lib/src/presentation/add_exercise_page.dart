@@ -6,7 +6,7 @@ import '../data/local_file_service.dart';
 import 'dart:convert';
 
 class AddExercisePage extends StatefulWidget {
-  final Map<String, dynamic>? exercise; // null = crear, no null = editar
+  final Map<String, dynamic>? exercise; // null = crear. No null = editar
   final int? index;
 
   AddExercisePage({this.exercise, this.index});
@@ -24,7 +24,7 @@ class _AddExercisePageState extends State<AddExercisePage> {
   void initState() {
     super.initState();
 
-    // Si estamos editando, precargar el nombre
+    // Si estamos editando, precargar datos
     if (widget.exercise != null) {
       _controller.text = widget.exercise!["name"] ?? "";
       imagePath = widget.exercise!["image"];
@@ -51,14 +51,14 @@ class _AddExercisePageState extends State<AddExercisePage> {
     final data = jsonDecode(content);
 
     if (widget.exercise == null) {
-      // CREAR
+      // Crear
       final newExercise = {
         "name": name,
         "image": imagePath
       };
       data["exercises"].add(newExercise);
     } else {
-      // EDITAR
+      // Editar
       final i = widget.index!;
       data["exercises"][i]["name"] = name;
       data["exercises"][i]["image"] = imagePath;
@@ -103,7 +103,7 @@ class _AddExercisePageState extends State<AddExercisePage> {
               label: Text("Seleccionar imagen"),
             ),
 
-            // (Opcional) Vista previa de la imagen seleccionada
+            // Vista previa de la imagen seleccionada (opcional)
             if (imagePath != null) ...[
               const SizedBox(height: 16),
               Text("Imagen seleccionada:"),
