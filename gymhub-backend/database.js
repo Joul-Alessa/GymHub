@@ -3,15 +3,15 @@ import Database from "better-sqlite3";
 const db = new Database("db.sqlite");
 
 db.prepare(`
-  CREATE TABLE IF NOT EXISTS USERS (
-    ID INTEGER PRIMARY KEY AUTOINCREMENT,
-    USERNAME TEXT,
-    NAME TEXT,
-    PASSWORD TEXT,
-    EMAIL TEXT,
-    PHONE TEXT,
-    DATE_WHEN_JOINED TEXT,
-    DATE_OF_BIRTH TEXT
+  CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT,
+    name TEXT,
+    password TEXT,
+    email TEXT,
+    phone TEXT,
+    date_when_joined TEXT,
+    date_of_birth TEXT
   )
 `).run();
 
