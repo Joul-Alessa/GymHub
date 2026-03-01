@@ -7,6 +7,7 @@ import { SQLiteUserRepository } from "./infrastructure/database/SQLiteUserReposi
 
 // Use Cases
 import { GetUsers } from "./application/users/GetUsers.js";
+import { GetUser } from "./application/users/GetUser.js";
 //import { CreateUser } from "./application/users/CreateUser.js";
 //import { LoginUser } from "./application/auth/LoginUser.js";
 
@@ -14,6 +15,7 @@ import { GetUsers } from "./application/users/GetUsers.js";
 const userRepository = new SQLiteUserRepository();
 
 const getUsersUseCase = new GetUsers(userRepository);
+const getUserUseCase  = new GetUser(userRepository);
 
 /*
 const createUserUseCase = new CreateUser(
@@ -29,7 +31,8 @@ const loginUserUseCase = new LoginUser(
 */
 
 export const container = {
-  getUsersUseCase
+  getUsersUseCase,
+  getUserUseCase
   //createUserUseCase,
   //loginUserUseCase
 };

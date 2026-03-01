@@ -1,4 +1,3 @@
-// infrastructure/database/SQLiteUserRepository.js
 import db from "./db.js";
 
 export class SQLiteUserRepository {
@@ -14,6 +13,21 @@ export class SQLiteUserRepository {
         DATE_OF_BIRTH
       FROM USERS
     `).all();
+  }
+
+  getById(id) {
+    return db.prepare(`
+      SELECT
+        ID,
+        USERNAME,
+        NAME,
+        EMAIL,
+        PHONE,
+        DATE_WHEN_JOINED,
+        DATE_OF_BIRTH
+      FROM USERS
+      WHERE ID = ?
+    `).get(id);
   }
   
   /*
