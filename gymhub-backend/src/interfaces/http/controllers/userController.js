@@ -22,3 +22,20 @@ export const getUser = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+export const updateUser = async (req, res) => {
+  try {
+    const result = await container.updateUserUseCase.execute(
+      req.params.id,
+      req.body
+    );
+
+    if (!result) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    res.json({ message: "User updated successfully" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};

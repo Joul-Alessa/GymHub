@@ -6,4 +6,8 @@ export class UserRepository {
   getById(id) {
     throw new Error("Not implemented");
   }
+
+  update(id, data) {
+    throw new Error("Not implemented");
+  }
 }
