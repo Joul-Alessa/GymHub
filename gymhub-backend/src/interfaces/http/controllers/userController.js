@@ -39,3 +39,17 @@ export const updateUser = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+export const deleteUser = async (req, res) => {
+  try {
+    const result = await container.deleteUserUseCase.execute(req.params.id);
+
+    if (!result) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    res.json({ message: "User deleted successfully" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};

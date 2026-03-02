@@ -9,6 +9,7 @@ import { SQLiteUserRepository } from "./infrastructure/database/SQLiteUserReposi
 import { GetUsers } from "./application/users/GetUsers.js";
 import { GetUser } from "./application/users/GetUser.js";
 import { UpdateUser } from "./application/users/UpdateUser.js";
+import { DeleteUser } from "./application/users/DeleteUser.js";
 //import { CreateUser } from "./application/users/CreateUser.js";
 //import { LoginUser } from "./application/auth/LoginUser.js";
 
@@ -18,6 +19,7 @@ const userRepository = new SQLiteUserRepository();
 const getUsersUseCase = new GetUsers(userRepository);
 const getUserUseCase  = new GetUser(userRepository);
 const updateUserUseCase = new UpdateUser(userRepository);
+const deleteUserUseCase = new DeleteUser(userRepository);
 
 /*
 const createUserUseCase = new CreateUser(
@@ -35,7 +37,8 @@ const loginUserUseCase = new LoginUser(
 export const container = {
   getUsersUseCase,
   getUserUseCase,
-  updateUserUseCase
+  updateUserUseCase,
+  deleteUserUseCase
   //createUserUseCase,
   //loginUserUseCase
 };

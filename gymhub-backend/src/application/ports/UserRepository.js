@@ -10,4 +10,8 @@ export class UserRepository {
   update(id, data) {
     throw new Error("Not implemented");
   }
+
+  softDelete(id) {
+    throw new Error("Not implemented");
+  }
 }
