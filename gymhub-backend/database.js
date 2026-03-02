@@ -11,7 +11,8 @@ db.prepare(`
     email TEXT,
     phone TEXT,
     date_when_joined TEXT,
-    date_of_birth TEXT
+    date_of_birth TEXT,
+    deleted_at TEXT
   )
 `).run();
 
