@@ -1,5 +1,6 @@
-import Database from "better-sqlite3";
+import knex from 'knex';
+import knexConfig from '../../../knexfile.js';
 
-const db = new Database("db.sqlite");
+const db = knex(knexConfig.development);
 
 export default db;

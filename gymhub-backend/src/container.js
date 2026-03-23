@@ -1,5 +1,5 @@
 // Repositories
-import { SQLiteUserRepository } from "./infrastructure/database/SQLiteUserRepository.js";
+import { PostgreSQLUserRepository } from "./infrastructure/database/PostgreSQLUserRepository.js";
 
 // Services
 //import { hashService } from "./infrastructure/services/hashService.js";
@@ -14,7 +14,7 @@ import { DeleteUser } from "./application/users/DeleteUser.js";
 //import { LoginUser } from "./application/auth/LoginUser.js";
 
 // Instancias
-const userRepository = new SQLiteUserRepository();
+const userRepository = new PostgreSQLUserRepository();
 
 const getUsersUseCase = new GetUsers(userRepository);
 const getUserUseCase  = new GetUser(userRepository);

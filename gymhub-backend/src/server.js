@@ -1,7 +1,11 @@
 import app from "./interfaces/http/app.js";
-// import { initDb } from "./infrastructure/database/initDb.js";
+import knex from 'knex';
+import knexConfig from '../knexfile.js';
 
-// initDb();
+const db = knex(knexConfig.development);
+
+// Ejecutar migraciones al iniciar
+await db.migrate.latest();
 
 app.listen(3000, () =>
   console.log("Servidor corriendo")
