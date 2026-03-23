@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["npm", "run", "migrate", "&&", "node", "src/server.js"]
+CMD npm run migrate && node src/server.js
