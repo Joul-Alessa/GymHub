@@ -1,0 +1,50 @@
+{
+    "data":
+    [
+        {
+            "date": "19/12/2024",
+            "exercises":
+            [
+                {
+                    "id": "1",
+                    "series": "4",
+                    "repetitions": "12",
+                    "weight": "25",
+                    "difficulty": "normal"
+                },
+                {
+                    "id": "2",
+                    "series": "4",
+                    "repetitions": "12",
+                    "weight": "40",
+                    "difficulty": "hard"
+                }
+            ]
+        },
+        {
+            "date": "21/12/2024",
+            "exercises":
+            [
+                {
+                    "id": "1",
+                    "series": "4",
+                    "repetitions": "12",
+                    "weight": "25",
+                    "difficulty": "easy"
+                },
+                {
+                    "id": "2",
+                    "series": "4",
+                    "repetitions": "12",
+                    "weight": "40",
+                    "difficulty": "normal"
+                }
+            ]
+        }
+    ],
+    "metadata":
+    {
+        "total": "2",
+        "version": "1"
+    }
+}
