@@ -1,0 +1,22 @@
+{
+    "data":
+    [
+        {
+            "id": "1",
+            "name": "Peso muerto con barra",
+            "image": "/images/2024-12-19-204443.jpg",
+            "muscular_group": [1, 2]
+        },
+        {
+            "id": "2",
+            "name": "Sentadilla Smith",
+            "image": "/images/2024-12-19-204612.jpg",
+            "muscular_group": [3]
+        }
+    ],
+    "metadata":
+    {
+        "total": "2",
+        "version": "1"
+    }
+}

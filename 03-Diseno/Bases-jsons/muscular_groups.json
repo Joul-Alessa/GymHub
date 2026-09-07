@@ -1,0 +1,26 @@
+{
+    "data":
+    [
+        {
+            "id": "1",
+            "name": "Bíceps"
+        },
+        {
+            "id": "2",
+            "name": "Tríceps"
+        },
+        {
+            "id": "3",
+            "name": "Cuádriceps"
+        },
+        {
+            "id": "4",
+            "name": "Espalda"
+        }
+    ],
+    "metadata":
+    {
+        "total": "4",
+        "version": "1"
+    }
+}
