@@ -1,0 +1,67 @@
+:root {
+  --clay-bg: #e8ecf3;
+  --clay-surface: #eef1f7;
+  --clay-surface-alt: #e3e8f0;
+  --clay-text: #3a4256;
+  --clay-text-muted: #7e879c;
+  --clay-primary: #7c8cf8;
+  --clay-primary-text: #ffffff;
+  --clay-accent: #6fd6a8;
+  --clay-danger: #f38ba0;
+  --clay-warning: #f8c471;
+
+  --clay-shadow-light: #ffffff;
+  --clay-shadow-dark: #b9c1d4;
+
+  --clay-radius-sm: 14px;
+  --clay-radius-md: 20px;
+  --clay-radius-lg: 28px;
+
+  --clay-shadow-raised: 8px 8px 16px var(--clay-shadow-dark), -8px -8px 16px var(--clay-shadow-light);
+  --clay-shadow-pressed: inset 4px 4px 8px var(--clay-shadow-dark), inset -4px -4px 8px var(--clay-shadow-light);
+  --clay-shadow-soft: 4px 4px 10px var(--clay-shadow-dark), -4px -4px 10px var(--clay-shadow-light);
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--clay-bg);
+  color: var(--clay-text);
+  font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 800;
+  color: var(--clay-text);
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--clay-shadow-dark);
+  border-radius: 10px;
+}
