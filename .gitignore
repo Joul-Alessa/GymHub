@@ -3,6 +3,8 @@ backend/uploads/*
 !backend/uploads/.gitkeep
 backend/*.sqlite
 backend/*.sqlite3
+backend/*.sqlite-shm
+backend/*.sqlite-wal
 .env
 dist/
 .DS_Store
